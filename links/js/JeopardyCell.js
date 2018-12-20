@@ -15,17 +15,17 @@ class JeopardyCell extends Cell {
     }
 
     populateValue () {
-        const value = document.createElement('a')
+        this.value = document.createElement('a')
         const category = this.grid.categoryObjects[this.rowIndex]
-        value.innerHTML = category.clues[this.cellIndex].value
-        this.element.appendChild(value)
+        this.value.innerHTML = category.clues[this.cellIndex].value
+        this.element.appendChild(this.value)
 
         this.onClickBound = this.onClickUnbound.bind(this)
         this.element.addEventListener('click', this.onClickBound)
     }
 
     onClickUnbound() {
-        this.grid.addNewQuestionBox(this.rowIndex, this.cellIndex)
+        this.grid.addNewQuestionBox(this.value.innerHTML, this.rowIndex)
         this.element.removeEventListener('click', this.onClickBound)
         this.element.innerHTML = ''
     }

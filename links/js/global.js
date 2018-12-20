@@ -4,7 +4,7 @@ const categoryFetchURL = 'https://cors-anywhere.herokuapp.com/http://www.jservic
 const categoryPromises = categoryIDs
     .map(id =>
         fetch(categoryFetchURL + id)
-            .then(categoryObject => categoryObject.json())
+            .then(response => response.json())
     )
 Promise.all(categoryPromises).then(function(categoryObjects) {
     let jeopardyGrid = new JeopardyGrid(6, 5, 'questions', JeopardyCell, categoryObjects, 'categories')

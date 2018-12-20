@@ -24,21 +24,19 @@ class GameManager {
             this.playerTurn = this.player2
         }
     }
-    checkAnswer(rowIndex, cellIndex) {
-        let answer = this.answerValueElement.value
-        let category = this.categoryObjects[rowIndex]
-        let question = category.clues[cellIndex]
+    checkAnswer(questionAnswer, value) {
+        let userAnswer = this.answerValueElement.value
 
-        if (answer.toLowerCase() == question.answer.toLowerCase()) {
-            this.playerTurn.score += question.value
+        if (userAnswer.toLowerCase() == questionAnswer.toLowerCase()) {
+            this.playerTurn.score += Number(value)
         }
         else {
-            this.playerTurn.score -= question.value
+            this.playerTurn.score -= Number(value)
         }
 
         this.answerValueElement.value = ''
         this.questionBoxElement.style.display = 'none'
-        
+
         this.playerTurn.updateScore()
         this.whoseTurn = !this.whoseTurn
         this.showWhoTurnItIs()

@@ -32,7 +32,7 @@ class JeopardyGrid extends Grid {
         })
     }
 
-    addNewQuestionBox(rowIndex, cellIndex) {
-        let questionBox = new QuestionBox(this.categoryObjects, 'answer-box', 'question-display', rowIndex, cellIndex, this)
+    addNewQuestionBox(value, categoryIndex) {
+        let questionBox = new QuestionBox(this.categoryObjects, 'answer-box', 'question-display', value, categoryIndex, this)
     }
 }
