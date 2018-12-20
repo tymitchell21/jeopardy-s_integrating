@@ -58,7 +58,7 @@ function questionTimer () {
     let timer = document.querySelector('#timer')
     timer.innerHTML = this.timeLeft
     if (this.timeLeft <= 0) {
-        this.grid.gameManager.checkAnswer(this.rowIndex, this.cellIndex)
+        this.grid.gameManager.checkAnswer(this.answer, this.value)
         this.submitButtonElement.removeEventListener('submit', this.boundCallCheckAnswerFunction)
         clearInterval(timerVar)
     }

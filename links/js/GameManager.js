@@ -9,6 +9,7 @@ class GameManager {
         this.turnElement = document.querySelector('#who-turn')
         this.answerValueElement = document.querySelector('#answer-input')
         this.questionBoxElement = document.querySelector('#answer-box')
+        this.questionElement = document.querySelector('#question-display')
 
         this.showWhoTurnItIs()
     }
@@ -26,7 +27,7 @@ class GameManager {
     }
     checkAnswer(questionAnswer, value) {
         let userAnswer = this.answerValueElement.value
-
+        console.log(questionAnswer, userAnswer)
         if (userAnswer.toLowerCase() == questionAnswer.toLowerCase()) {
             this.playerTurn.score += Number(value)
         }
@@ -34,8 +35,11 @@ class GameManager {
             this.playerTurn.score -= Number(value)
         }
 
-        this.answerValueElement.value = ''
-        this.questionBoxElement.style.display = 'none'
+        this.questionElement.innerHTML = questionAnswer
+        setTimeout(() => {
+            this.answerValueElement.value = ''
+            this.questionBoxElement.style.display = 'none'
+        }, 2000)
 
         this.playerTurn.updateScore()
         this.whoseTurn = !this.whoseTurn
