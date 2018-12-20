@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Jeopardy</title>
+
+    <link rel="stylesheet" href="links/css/style.css">
+</head>
+<body>
+    <div id='main-wrap'>
+        <header id='header'>
+            <div id="player1">
+                <h1>Player 1</h1>
+                <h2 id='player1-score'>0</h2>
+            </div>
+            <div id="title">
+                <img src="links/img/logo.png" alt="Logo Not Found">
+                <h1 id="who-turn">It is Player One's turn</h1>
+            </div>
+            <div id="player2">
+                <h1>Player 2</h1>
+                <h2 id='player2-score'>0</h2>
+            </div>
+        </header>
+        <div id='board-wrap'>
+            <div id='categories'></div>
+            <div id='questions'></div>
+        </div>
+    </div>
+    <div id='answer-box'>
+        <h1 id="question-display">Who died?</h1>
+        <h2 id="timer"></h2>
+        <form id="submit-form">
+            <input type="text" id="answer-input"> 
+            <input type="submit" id="submit-answer"></input>
+        </form>
+    </div>
+
+    <script src="links/js/global.js"></script>
+    <script src="links/js/Grid.js"></script>
+    <script src="links/js/Cell.js"></script>
+    <script src="links/js/JeopardyGrid.js"></script>
+    <script src="links/js/JeopardyCell.js"></script>
+    <script src="links/js/QuestionBox.js"></script>
+    <script src="links/js/GameManager.js"></script>
+    <script src="links/js/Player.js"></script>
+</body>
+</html>
