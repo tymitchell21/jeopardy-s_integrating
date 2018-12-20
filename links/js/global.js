@@ -1,5 +1,5 @@
 const categoryIDs = [2124, 309, 554, 1371, 4616, 254]
-const categoryFetchURL = 'http://www.jservice.io/api/category?id='
+const categoryFetchURL = 'https://cors-anywhere.herokuapp.com/http://www.jservice.io/api/category?id='
 
 const categoryPromises = categoryIDs
     .map(id =>
