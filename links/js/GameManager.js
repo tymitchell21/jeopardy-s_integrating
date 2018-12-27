@@ -36,7 +36,7 @@ class GameManager {
         else {
             scoreChange -= Number(value)
         }
-        this.playerTurn.score = scoreChange
+        this.playerTurn.score += scoreChange
 
         this.submitFormElement.style.display = 'none'
         this.questionElement.innerHTML = questionAnswer
