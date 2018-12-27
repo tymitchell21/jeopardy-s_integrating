@@ -38,6 +38,13 @@ class GameManager {
         }
         this.playerTurn.score += scoreChange
 
+        this.showAnswer(questionAnswer, scoreChange)
+        this.playerTurn.updateScore()
+        this.whoseTurn = !this.whoseTurn
+        this.showWhoTurnItIs()
+        this.checkEndGame()
+    }
+    showAnswer(questionAnswer, scoreChange) {
         this.submitFormElement.style.display = 'none'
         this.questionElement.innerHTML = questionAnswer
         this.timerElement.innerHTML = scoreChange
@@ -47,11 +54,6 @@ class GameManager {
             this.questionBoxElement.style.display = 'none'
             this.timerElement.innerHTML = ''
         }, 2000)
-
-        this.playerTurn.updateScore()
-        this.whoseTurn = !this.whoseTurn
-        this.showWhoTurnItIs()
-        this.checkEndGame()
     }
     checkEndGame() {
         let endGame = true
